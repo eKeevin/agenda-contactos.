@@ -1,12 +1,68 @@
-# React + Vite
+----------------------------------📞 Agenda de Contactos---------------------------------------------
+Una aplicación web moderna y responsive para gestionar contactos, desarrollada con React y CSS Modules.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live: link
+Repositorio: [GitHub](https://github.com/eKeevin/agenda-contactos.)
 
-## Expanding the ESLint configuration
+✨ Características
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Agregar contactos con nombre y número
+🔍 Búsqueda en tiempo real por nombre
+🗑️ Eliminar contactos individuales
+📱 Diseño responsive para móvil, tablet y desktop
+🎨 Interfaz moderna con gradientes y animaciones suaves
+⚡ Layout estable que no se rompe con muchos contactos
+🌟 Scroll personalizado cuando hay muchos elementos
+
+🛠️ Tecnologías Utilizadas-------------
+
+Frontend: React 18
+Estilos: CSS Modules
+Build: Create React App
+Deploy: GitHub Pages
+Control de Versiones: Git & GitHub
+
+🏗️ Instalación y Uso
+Prerrequisitos----------------------
+
+Node.js (v14 o superior)
+npm o yarn
+
+Instalación Local
+bash# Clonar el repositorio
+git clone https://github.com/tu-usuario/agenda-contactos.git
+
+# Entrar al directorio
+cd agenda-contactos
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm start
+La aplicación estará disponible en http://localhost:3000
+
+
+🎯 Funcionalidades Detalladas-----------
+
+Gestión de Contactos
+
+Agregar: Formulario intuitivo con validación
+Buscar: Filtrado instantáneo mientras escribes
+Eliminar: Botón individual por contacto
+Persistencia: Los contactos se mantienen en la sesión
+
+Diseño Responsive
+
+Móvil (< 768px): Layout en columna, formulario apilado
+Tablet (768px - 1024px): Grid de 2 columnas
+Desktop (> 1024px): Grid de 3 columnas optimizado
+
+📧 Contacto---------
+
+Email: tu-email@example.com
+LinkedIn: Tu Perfil
+Portfolio: tu-portfolio.com
+GitHub: @tu-usuario
