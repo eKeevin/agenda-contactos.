@@ -1,9 +1,5 @@
 ----------------------------------📞 Agenda de Contactos---------------------------------------------
 Una aplicación web moderna y responsive para gestionar contactos, desarrollada con React y CSS Modules.
-
-
-
-Live: link
 Repositorio: [GitHub](https://github.com/eKeevin/agenda-contactos.)
 
 ✨ Características
@@ -62,7 +58,6 @@ Desktop (> 1024px): Grid de 3 columnas optimizado
 
 📧 Contacto---------
 
-Email: tu-email@example.com
-LinkedIn: Tu Perfil
-Portfolio: tu-portfolio.com
-GitHub: @tu-usuario
+Email: kevinhernanpineda@gmail.com
+LinkedIn: https://www.linkedin.com/in/kevin-hern%C3%A1n-pineda-758b8b208/
+GitHub: https://github.com/eKeevin
