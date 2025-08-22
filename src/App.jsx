@@ -2,71 +2,73 @@ import { useState } from 'react'
 import Filter from './components/filter.jsx'
 import AddPersonForm from './components/AddPersonForm.jsx'
 import Persons from './components/Persons.jsx'
+import styles from "./App.module.css"
 
 const App = () => {
   const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number: '040-123456', id: 1 },
-    { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },
-    { name: 'Dan Abramov', number: '12-43-234345', id: 3 },
-    { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
-  ]) 
+    { id: 1, name: "Juan Pérez", number: "123-456" },
+    { id: 2, name: "María Gómez", number: "987-654" },
+  
+  ])
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [filterText, setFilterText] = useState('')
 
+  const handleDelete = (id) => {  
+    if (!id) return
+    if (window.confirm("¿Seguro que querés borrar este contacto?")) {
+      setPersons(persons.filter(person => person.id !== id))
+    }
+  }
 
-  const handleAddButton = (event) => { //captura el evento del formulario evita recargar y // crea un nuevo objeto con el nombre y número
+  const handleAddButton = (event) => {
     event.preventDefault()
+    const existingPerson = persons.find(person => person.name === newName)
     const nameObject = {
+      id: persons.length ? persons[persons.length - 1].id + 1 : 1,
       name: newName,
       number: newNumber
     }
-   if (persons.find(person => person.name === newName)) {
-    alert(`${newName} is already added to phonebook`)
-    return
-  }
 
-  if (persons.find(person => person.number === newNumber)) {
-    alert(`${newNumber} is already added to phonebook`)
-    return
-  }
+    if (existingPerson) {
+      if (window.confirm(`${newName} ya existe, ¿querés actualizar el número?`)) {
+        setPersons(persons.map(p => 
+          p.id === existingPerson.id ? { ...existingPerson, number: newNumber } : p
+        ))
+        setNewName('')
+        setNewNumber('')
+      }
+      return
+    }
+
     setPersons(persons.concat(nameObject))
     setNewName('')
-    setNewNumber('')}
+    setNewNumber('')
+  }
 
-const filteredPersons = persons.filter(person =>
-  person.name.toLowerCase().includes(filterText.toLowerCase()) // logica del filtro
-)
-
-
-const handleNameChange = (event) => {
-    setNewName(event.target.value)}
-const  handleNumberChange = (event) => {
-    setNewNumber(event.target.value)}
-const handleFilterChange = (event) => setFilterText(event.target.value) //1  captura el texto y lo guarda en un estado
-
-
+  const filteredPersons = persons.filter(person =>
+    person.name.toLowerCase().includes(filterText.toLowerCase())
+  )
 
   return (
-    <div>
-      <h2>Phonebook</h2>
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>Agenda de contactos</h2>
       
-       <p> filtrar por nombre: </p>
-        <Filter // pasa el valor del filtro y la función al componente Filter
-  value={filterText} 
-  onChange={handleFilterChange}  
-/> 
-      <AddPersonForm //   pasa los valores y funciones como props para que el componente pueda usarlos
+       <div className={styles.filterBox}>
+        <p>Buscar:</p>
+        <Filter value={filterText} onChange={(e) => setFilterText(e.target.value)} />
+      </div>
+
+      <AddPersonForm
         newName={newName}
         newNumber={newNumber}
-        handleNameChange={handleNameChange}
-        handleNumberChange={handleNumberChange}
+        handleNameChange={(e) => setNewName(e.target.value)}
+        handleNumberChange={(e) => setNewNumber(e.target.value)}
         handleAddButton={handleAddButton}
       />
-        <h2>Contactos</h2>
-      <Persons //* pasa los contactos filtrados al componente Persons */
-      persons={filteredPersons} /> 
-     
+
+      <h2 className={styles.subtitle}>Contactos</h2>
+      <Persons persons={filteredPersons} handleDelete={handleDelete} /> 
     </div>
   )
 }

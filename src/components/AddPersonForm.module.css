@@ -1,0 +1,60 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+
+.form div {
+  display: flex;
+  flex-direction: column;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  ;
+}
+
+
+.input {
+  padding-left: 5px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.button {
+  background: #5386a1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.button:hover {
+  background: #456492;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+  transform: scale(1.05)
+}
+
+/*  Responsive */
+@media (min-width: 768px) {
+  .form {
+    flex-direction: row; 
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+ .form div {
+  flex: 1;
+  max-width: 15rem; /* cada input no se pasa de este ancho */
+}
+  .button {
+    margin-left: 1rem; /* separa el botón */
+  }
+}

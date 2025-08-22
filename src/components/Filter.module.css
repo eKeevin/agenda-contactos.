@@ -1,0 +1,27 @@
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  align-items: end;}
+.input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+   max-width: 20rem;
+}
+
+
+/* 📱 Responsive */
+@media (min-width: 768px) {
+  .filter {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .input {
+    width: 60%;
+  }
+}

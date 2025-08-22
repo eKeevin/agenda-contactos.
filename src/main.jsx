@@ -1,10 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css"
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+
+const Persons = ({ persons, }) => (
+  <div>
+         {persons.map((person, index) => (
+            <div key={person.name}> {person.name} {person.number}</div>))}
+        </div>)
+
+export default Persons;

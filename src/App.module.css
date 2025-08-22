@@ -1,0 +1,81 @@
+/* App.module.css */
+.wrapper {
+max-width: 50rem; /* ancho más contenido */
+  margin:  auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  padding: 2rem;
+  font-family:sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #5181b8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   box-sizing: border-box;
+  width: 100%;   
+}
+
+.title {
+ 
+ font-size: 2rem;
+    text-align: left;
+    width: 100%;
+ 
+}
+
+.subtitle {
+  color: #34495e;
+  margin-top: 2rem;
+}
+
+
+.filterBox {  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  align-items: start;
+  ;
+}
+
+
+.filterBox p {
+  color: #264f5f;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  
+  
+ 
+
+}
+
+/*  Responsive */
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    text-align: left;
+    width: 100%;
+     
+  }
+.filterBox {
+    flex-direction: column;
+    align-items: left;
+    justify-content: start;
+    width: 100%;
+  }
+ .filterBox p {
+    font-size: 1.2rem;
+    text-align: left;
+    width: 100%;
+  }
+}
